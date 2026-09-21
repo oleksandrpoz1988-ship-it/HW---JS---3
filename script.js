@@ -65,3 +65,50 @@ for (let girl of girls) {
 const averageAge = totalAge / girls.length;
 
 console.log("Завдання 5 (Середній вік):", averageAge);
+
+
+
+
+
+// Варіант 1.1: Використовуючи тернарний оператор '?'
+function checkAgeTernary(age) {
+  return age > 18 ? true : confirm('Батьки дозволили?');
+}
+
+// Варіант 1.2: Використовуючи логічний оператор '||'
+function checkAgeOr(age) {
+  return age > 18 || confirm('Батьки дозволили?');
+}
+
+// Перевірка роботи Завдання 1 у консолі
+console.log("Завдання 1 (Тернарний для 20):", checkAgeTernary(20));
+
+
+// --- Завдання 2: Функція min(a, b) ---
+
+function min(a, b) {
+  if (a < b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+// Перевірка роботи Завдання 2 у консолі
+console.log("Завдання 2 (min 2 і 5):", min(2, 5));
+console.log("Завдання 2 (min 3 і -1):", min(3, -1));
+
+
+// --- Завдання 3: Стрілкові функції в ask() ---
+
+function ask(question, yes, no) {
+  if (confirm(question)) yes();
+  else no();
+}
+
+// Передаємо стрілкові функції () => ... замість звичайних function()
+ask(
+  "Ви згодні?",
+  () => console.log("Ви погодились."),
+  () => console.log("Ви скасували виконання.")
+);
